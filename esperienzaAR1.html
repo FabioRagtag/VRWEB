@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Hello World</title>
+    <script src="js/aframe.js"></script>
+    <script src="js/arjs.js"></script>
+  </head>
+  <body>
+  <a-scene
+   vr-mode-ui="enabled: false;"
+   renderer="logarithmicDepthBuffer: true;"
+   embedded
+   arjs="trackingMethod: best; sourceType: webcam;detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+ >
+  <a-marker type='barcode' value='5'>
+            <a-box position='0 0.5 0' color="yellow"></a-box>
+            <a-light type="directional" position="0 0 0" rotation="-90 0 0" target="#directionaltarget">
+              <a-entity id="directionaltarget" position="0 0 -1"></a-entity>
+            </a-light>
+        </a-marker>
+<a-entity camera></a-entity>
+  </a-scene>
+
+</body>
